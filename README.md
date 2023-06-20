@@ -3,11 +3,6 @@ People Counting in Real-Time using live video stream/IP camera in OpenCV.
 
 > NOTE: This is an improvement/modification to https://www.pyimagesearch.com/2018/08/13/opencv-people-counter/
 
-<div align="center">
-<img src=https://imgur.com/SaF1kk3.gif" width=550>
-<p>Live demo</p>
-</div>
-
 - The primary aim is to use the project as a business perspective, ready to scale.
 - Use case: counting the number of people in the stores/buildings/shopping malls etc., in real-time.
 - Sending an alert to the staff if the people are way over the limit.
@@ -69,7 +64,7 @@ pip install -r requirements.txt ```
 To run inference on a test video file, head into the root directory and run the command: 
 
 ```
-python people_counter.py --prototxt detector/MobileNetSSD_deploy.prototxt --model detector/MobileNetSSD_deploy.caffemodel --input utils/data/tests/test_1.mp4
+python people_counter.py --input utils/data/tests/test_1.mp4
 ```
 
 ### Webcam
@@ -77,7 +72,7 @@ python people_counter.py --prototxt detector/MobileNetSSD_deploy.prototxt --mode
 To run on a webcam, set ```"url": 0``` in ```utils/config.json``` and run the command:
 
 ```
-python people_counter.py --prototxt detector/MobileNetSSD_deploy.prototxt --model detector/MobileNetSSD_deploy.caffemodel
+python people_counter.py 
 ```
 
 ### IP camera
@@ -86,7 +81,7 @@ To run on an IP camera, setup your camera url in ```utils/config.json```, e.g., 
 
 Then run the command:
 ```
-python people_counter.py --prototxt detector/MobileNetSSD_deploy.prototxt --model detector/MobileNetSSD_deploy.caffemodel
+python people_counter.py
 ```
 
 ---
@@ -115,8 +110,6 @@ The following features can be easily enabled/disabled in ```utils/config.json```
 If selected, we send an email alert in real-time. Example use case: If the total number of people (say 10 or 30) are exceeded in a store/building, we simply alert the staff. 
 
 - You can set the max. people limit in config, e.g., ```"Threshold": 10```.
-- This is quite useful considering scenarios similar to COVID-19. Below is an example:
-<img src="https://imgur.com/35Yf1SR.png" width=350>
 
 > ***1. Setup your emails:***
 
@@ -165,8 +158,6 @@ if num_seconds > 28800:
 ### Simple log
 
 - Logs the counting data at end of the day.
-- Useful for footfall analysis. Below is an example:
-<img src="https://imgur.com/CV2nCjx.png" width=400>
 
 ---
 
@@ -182,7 +173,3 @@ if num_seconds > 28800:
 
 - Object detection with SSD/MobileNets: https://pyimagesearch.com/2017/09/11/object-detection-with-deep-learning-and-opencv/
 - Schedule: https://pypi.org/project/schedule/
-
----
-
-*saimj7/ 19-08-2020 - © <a href="http://saimj7.github.io" target="_blank">Sai_Mj</a>.*
